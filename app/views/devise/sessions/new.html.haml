@@ -1,0 +1,18 @@
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .text-right.mb-sm
+    %a.text-muted{:href => "#"} Need to Signup?
+  .form-group.has-feedback
+    = f.text_field :email, placeholder: 'Enter email', type: 'email', class: 'form-control'
+    /%span.fa.fa-envelope.form-control-feedback.text-muted
+  .form-group.has-feedback
+    = f.password_field :password, placeholder: 'Password', type:'password', class: 'form-control'
+    /%span.fa.fa-lock.form-control-feedback.text-muted
+  .clearfix
+    .checkbox.c-checkbox.pull-left.mt0
+      %label
+        %input{:type => "checkbox", :value => ""}/
+        = succeed "Remember" do
+          %span.fa.fa-check
+    .pull-right
+      %a.text-muted{:href => "/users/password/new"} Forgot your password?
+  %button.btn.btn-block.btn-purple{:type => "submit"} Login

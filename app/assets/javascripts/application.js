@@ -11,5 +11,26 @@
 // about supported directives.
 //
 //= require jquery
+//= require jqueryui/js/jquery-ui-1.10.4.custom.min.js
 //= require jquery_ujs
+//= require bootstrap/js/bootstrap.min.js
+//= require slider/js/bootstrap-slider.js
+//= require chosen/chosen.jquery.min.js
+//= require filestyle/bootstrap-filestyle.min.js
+//= require animo/animo.min.js
+//= require slimscroll/jquery.slimscroll.min.js
 //= require turbolinks
+//= require modernizr/modernizr.js
+//= require store/store.min.js
+//= require screenfull/screenfull.min.js
+//= require fastclick/fastclick
+//= require sparklines/jquery.sparkline.min.js
+//= require codemirror
+//= require codemirror/addon/mode/overlay
+//= require codemirror/mode/markdown/markdown
+//= require codemirror/mode/xml/xml
+//= require codemirror/mode/gfm/gfm
+//= require marked
+//= require bootstrap-tagsinput
+//= require navbar-search
+//= require animo/animo.min.js

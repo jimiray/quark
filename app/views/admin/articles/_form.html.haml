@@ -1,0 +1,12 @@
+= form_for :article do |f|
+  %fieldset
+    .form-group
+      %label Title
+      = f.text_field :title, class: 'form-control'
+      %label Tags
+      = f.text_field :tags, class: 'form-control', data: {role: 'tagsinput'}, value: "test,test2,test3"
+      %label Body
+      = f.text_area :body, data: {"uk-markdownarea" => "{mode:'tab'}"}
+  %fieldset.text-right
+    = f.button 'Cancel', class: 'btn btn-default'
+    = f.submit 'Save', class: 'btn btn-purple'

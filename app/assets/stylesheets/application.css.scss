@@ -11,8 +11,39 @@
  * file per style scope.
  *
  *= require_self
+ *= require bootstrap
+ *= require font-awesome
+ *= require admin
+ *= require common
+ *= require theme
+ *= require codemirror
+ *= require codemirror/themes/night
+ *= require bootstrap-tagsinput
  */
 
-@import "bourbon";
-@import "bootstrap";
-@import "font-awesome";
+ @import url(http://fonts.googleapis.com/css?family=Gloria+Hallelujah);
+
+ .brand-logo {
+   color: #fff;
+   font-family: 'Gloria Hallelujah';
+   font-size: 1.2em;
+ }
+
+ .brand-logo-collapsed {
+   color: #fff;
+  font-family: 'Gloria Hallelujah';
+}
+
+ .atom {
+   font-size: 1.4em;
+ }
+
+ .panel-heading.text-center {
+
+ }
+ .panel-heading.text-center a {
+  color: #fff;
+  font-size: 1.8em;
+  font-family: 'Gloria Hallelujah';
+  line-height: 0.8em;
+ }

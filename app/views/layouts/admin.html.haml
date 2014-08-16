@@ -1,0 +1,28 @@
+!!!
+/[if lt IE 7] <html class="ie ie6 lt-ie9 lt-ie8 lt-ie7" lang="en">
+/[if IE 7] <html class="ie ie7 lt-ie9 lt-ie8"        lang="en">
+/[if IE 8] <html class="ie ie8 lt-ie9"               lang="en">
+/[if IE 9] <html class="ie ie9"                      lang="en">
+/ [if !IE]><!
+%html.no-ie{:lang => "en"}
+  / <![endif]
+  %head
+    / Meta
+    %meta{:charset => "utf-8"}/
+    %title Quark Admin
+    / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    /[if lt IE 9] <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  %body
+    / START Main wrapper
+    .wrapper
+      = render partial: 'layouts/admin/sidebar'
+      / START Main section
+      %section
+        / START Page content
+        .content-wrapper
+          = yield
+      / END Main section
+    / END Main wrapper
+    = javascript_include_tag 'theme', 'pages'
