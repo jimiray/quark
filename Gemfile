@@ -58,6 +58,8 @@ gem 'bootstrap-tagsinput-rails'
 gem "analytics-ruby"
 gem "bcrypt-ruby"
 
+gem 'friendly_id', '~> 5.0.0'
+
 gem "bourbon"
 gem 'devise'
 gem "cancan"

@@ -19,9 +19,14 @@
  *= require codemirror
  *= require codemirror/themes/night
  *= require bootstrap-tagsinput
+ *= require datetimepicker/bootstrap-datetimepicker.css
  */
 
  @import url(http://fonts.googleapis.com/css?family=Gloria+Hallelujah);
+
+.no-padding {
+  padding: 0px 0px !important;
+}
 
  .brand-logo {
    color: #fff;

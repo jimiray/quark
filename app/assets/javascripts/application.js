@@ -34,3 +34,5 @@
 //= require bootstrap-tagsinput
 //= require navbar-search
 //= require animo/animo.min.js
+//= require moment/min/moment.min.js
+//= require datetimepicker/bootstrap-datetimepicker.min.js

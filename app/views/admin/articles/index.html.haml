@@ -1,1 +1,16 @@
 %h3 All Articles
+
+.table-responsive.table.bordered.col-md-12
+  %table.table-striped.col-md-12
+    %thead
+      %tr
+        %th #
+        %th Title
+        %th Author
+        %th Created At
+        %th Published At
+        %th Tasks
+    %tbody
+      - Article.all.each do |article|
+        %tr.danger
+          = render partial: article

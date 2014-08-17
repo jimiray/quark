@@ -1,0 +1,14 @@
+%td.col-sm-1= article.id
+%td.col-sm-5= article.title
+%td.col-sm-1= article.user.name
+%td.col-sm-2= article.created_at.to_formatted_s(:us_format)
+- if article.published?
+  %td.col-sm-2= article.published_at.to_formatted_s(:us_format)
+- else
+  %td.col-sm-2
+%td.col-sm-2
+  = link_to "Edit", edit_admin_article_path(article), class: 'button btn btn-xs btn-purple'
+  - unless article.published?
+    = link_to "Publish", publish_admin_article_path(article), method: :post, class: 'btn btn-xs btn-danger'
+  - else
+    = link_to "Unpublish", unpublish_admin_article_path(article), method: :post, class: 'btn btn-xs btn-danger', confirm: true

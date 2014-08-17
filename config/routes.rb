@@ -13,7 +13,12 @@ Rails.application.routes.draw do
   # Example resource route within a namespace:
   namespace :admin do
     resource :dashboard
-    resources :articles
+    resources :articles do
+      member do
+        post :publish
+        post :unpublish
+      end
+    end
     resources :pages
     resources :users
   end

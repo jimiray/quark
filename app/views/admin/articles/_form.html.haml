@@ -1,12 +1,26 @@
-= form_for :article do |f|
-  %fieldset
-    .form-group
-      %label Title
-      = f.text_field :title, class: 'form-control'
-      %label Tags
-      = f.text_field :tags, class: 'form-control', data: {role: 'tagsinput'}, value: "test,test2,test3"
-      %label Body
-      = f.text_area :body, data: {"uk-markdownarea" => "{mode:'tab'}"}
+= form_for [:admin, @article], role: 'form' do |f|
+  .form-group.form-group-lg
+    %label Title
+    = f.text_field :title, class: 'form-control input-lg', placeholder: 'Title'
+  .form-group
+    %label Body
+    = f.text_area :body, data: {"uk-markdownarea" => "{mode:'tab'}"}
+  .form-group
+    .col-md-4
+      .form-group
+        .input-group
+          %span.input-group-addon
+            %span.fa-tag.fa
+          .form-control
+            = f.text_field :tags, data: {role: 'tagsinput'}, style: "border: 0px;", value: @article.tags.map(&:name).join(',')
+    .col-md-4
+      .datetimepicker.date.mb-lg.input-group
+        = f.text_field :published_at, class: 'form-control', placeholder: 'Publish On'
+        %span.input-group-addon
+          %span.fa-calendar.fa
+    .col-md-4
+      %label Feature
+
   %fieldset.text-right
     = f.button 'Cancel', class: 'btn btn-default'
     = f.submit 'Save', class: 'btn btn-purple'
