@@ -1,12 +1,14 @@
-class Admin::SessionsController < Devise::SessionsController
+module Admin
+  class SessionsController < Devise::SessionsController
 
-  skip_before_filter :verify_authenticity_token, :only => [:destroy]
+    skip_before_filter :verify_authenticity_token, :only => [:destroy]
 
-  layout 'login'
+    layout 'login'
 
 
-  def after_sign_out_path_for(resource_or_scope)
-    new_user_session_path
+    def after_sign_out_path_for(resource_or_scope)
+      new_user_session_path
+    end
+
   end
-
 end

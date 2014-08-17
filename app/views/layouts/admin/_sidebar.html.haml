@@ -205,83 +205,22 @@
       / START Menu
       %li.nav-heading Main navigation
       %li
-        %a.no-submenu{"data-toggle" => "", :href => "index.html", :title => "Dashboard"}
+        %a.no-submenu{"data-toggle" => "", :href => "/admin/dashboard", :title => "Dashboard"}
           %em.fa.fa-dot-circle-o
           .label.label-primary.pull-right 10
           %span.item-text Dashboard
       %li.active
-        %a.no-submenu{"data-toggle" => "collapse-next", :href => "/admin/articles", :title => "Articles"}
+        %a.no-submenu{"data-toggle" => "", :href => "/admin/articles", :title => "Articles"}
           %em.fa.fa-edit
           %span.item-text Articles
-        %ul.nav
-          %li
-            %a.no-submenu{"data-toggle" => "", href: "/admin/articles", title: "All Articles"}
-              %spn.item-text All Articles
-          %li.active
-            %a.no-submenu{"data-toggle" => "", :href => "/admin/articles/new", :title => "New Article"}
-              %span.item-text New Article
       %li
         %a.has-submenu{"data-toggle" => "collapse-next", :href => "/admin/pages", :title => "Elements"}
           %em.fa.fa-flask
           %span.item-text Pages
-        / START SubMenu item
-        %ul.nav.collapse
-          %li
-            %a.no-submenu{"data-toggle" => "", :href => "button.html", :title => "Buttons"}
-              %span.item-text Buttons
-          %li
-            %a.no-submenu{"data-toggle" => "", :href => "notifications.html", :title => "Notifications"}
-              %span.item-text Notifications
-          %li
-            %a.no-submenu{"data-toggle" => "", :href => "spinners.html", :title => "Spinners"}
-              %span.item-text Spinners
-          %li
-            %a.no-submenu{"data-toggle" => "", :href => "animations.html", :title => "Animations"}
-              %span.item-text Animations
-          %li
-            %a.no-submenu{"data-toggle" => "", :href => "dropdown-animations.html", :title => "Dropdown"}
-              %span.item-text Dropdown
-          %li
-            %a.no-submenu{"data-toggle" => "", :href => "panels.html", :title => "Panels"}
-              %span.item-text Panels
-          %li
-            %a.no-submenu{"data-toggle" => "", :href => "portlets.html", :title => "Portlets"}
-              %span.item-text Portlets
-          %li
-            %a.no-submenu{"data-toggle" => "", :href => "maps.html", :title => "Maps"}
-              %span.item-text Maps
-          %li
-            %a.no-submenu{"data-toggle" => "", :href => "grid.html", :title => "Grid"}
-              %span.item-text Grid
-          %li
-            %a.no-submenu{"data-toggle" => "", :href => "grid-masonry.html", :title => "Grid Masonry"}
-              %span.item-text Grid Masonry
-          %li
-            %a.no-submenu{"data-toggle" => "", :href => "typo.html", :title => "Typography"}
-              %span.item-text Typography
-          %li
-            %a.no-submenu{"data-toggle" => "", :href => "icons.html", :title => "Icons"}
-              .label.label-primary.pull-right +400
-              %span.item-text Icons
-        / END SubMenu item
       %li
-        %a.has-submenu{"data-toggle" => "collapse-next", :href => "/admin/users", :title => "Forms"}
+        %a.has-submenu{"data-toggle" => "", :href => "/admin/users", :title => "Forms"}
           %em.fa.fa-users
           %span.item-text Users
-        / START SubMenu item
-        %ul.nav.collapse
-          %li
-            %a.no-submenu{"data-toggle" => "", :href => "form-standard.html", :title => "Standard"}
-              %span.item-text Standard
-          %li
-            %a.no-submenu{"data-toggle" => "", :href => "form-extended.html", :title => "Extended"}
-              %span.item-text Extended
-          %li
-            %a.no-submenu{"data-toggle" => "", :href => "form-validation.html", :title => "Validation"}
-              %span.item-text Validation
-          %li
-            %a.no-submenu{"data-toggle" => "", :href => "form-wizard.html", :title => "Wizard"}
-              %span.item-text Wizard
       %li
         %a.no-submenu{"data-toggle" => "collapse-next", :href => "/admin/settings", :title => "Settings"}
           %em.fa.fa-cogs

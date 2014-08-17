@@ -1,2 +1,4 @@
-class Admin::PagesController < Admin::BaseController
+module Admin
+  class PagesController < Admin::BaseController
+  end
 end

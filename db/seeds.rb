@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user = User.create(first_name: 'Admin', last_name: '', email: 'admin@example.com', password: 'test1234', password_confirmation: 'test1234')
-article = Article.create(user_id: user.id, title: 'Welcome to Quark', body: 'About Quark gose here!')
-t1 = Tag.create(name: 'welcome')
+user = User.create!(first_name: 'Admin', last_name: 'User', email: 'admin@example.com', password: 'test1234', password_confirmation: 'test1234')
+article = Article.create!(user_id: user.id, title: 'Welcome to Quark', body: 'About Quark gose here!')
+t1 = Tag.create!(name: 'welcome')
 article.tags << t1

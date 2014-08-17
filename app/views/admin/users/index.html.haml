@@ -1,0 +1,17 @@
+.pull-right
+  = link_to raw("<span class='fa fa-plus'></span> New User"), new_admin_user_path, class: 'btn btn-purple'
+%h3 Users
+
+.table-responsive.table.bordered.col-md-12
+  %table.table-striped.col-md-12
+    %thead
+      %tr
+        %th #
+        %th Name
+        %th Email
+        %th Member Since
+        %th Tasks
+    %tbody
+      - @users.each do |user|
+        %tr.danger
+          = render partial: user
