@@ -4,9 +4,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'mysql2'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 
@@ -81,6 +78,11 @@ group :test do
   gem "database_cleaner"
 end
 
+group :development, :test do
+  gem 'mysql2'
+end
+
 group :production do
+  gem 'pg'
   gem "rails_12factor"
 end
