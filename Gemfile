@@ -65,6 +65,8 @@ gem "haml-rails"
 gem "simple_form", git: "https://github.com/plataformatec/simple_form"
 gem "uuidtools"
 
+gem 'sidekiq'
+
 group :development do
   gem "rspec-rails"
   gem "guard-rspec"
