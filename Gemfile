@@ -59,6 +59,7 @@ gem 'friendly_id', '~> 5.0.0'
 
 gem "bourbon"
 gem 'devise'
+gem 'devise_invitable'
 gem "cancan"
 
 gem "haml-rails"

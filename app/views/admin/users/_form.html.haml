@@ -1,0 +1,19 @@
+= simple_form_for [:admin, @user], role: :form do |f|
+  .row
+    .form_group
+      .col-md-6
+        = f.input :first_name
+      .col-md-6
+        = f.input :last_name
+  .row
+    .form_group
+      .col-md-6
+        = f.input :email
+  .row
+    .form_group
+      .col-md-6
+        = f.input :password
+      .col-md-6
+        = f.input :password_confirmation
+
+
