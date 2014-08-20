@@ -1,6 +1,9 @@
 %td.col-sm-1= user.id
 %td.col-sm-5= link_to user.name, admin_user_path(user)
 %td.col-sm-1= user.email
-%td.col-sm-2= user.created_at.to_formatted_s(:us_format)
+- unless user.encrypted_password.nil?
+  %td.col-sm-2= user.created_at.to_formatted_s(:us_format)
+- else
+  %td.col-sm-2= user.invitation_created_at.to_formatted_s(:us_format)
 %td.col-sm-2
   = link_to raw("<span class='fa fa-edit'></span> Edit</span>"), edit_admin_user_path(user), class: 'button btn btn-xs btn-purple'

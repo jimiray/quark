@@ -7,13 +7,10 @@ class User < ActiveRecord::Base
 
   has_many :articles
 
-  validates :first_name, :last_name, presence: true
+  validates :name, presence: true
+  validates :email, presence: true
 
   extend FriendlyId
   friendly_id :name, use: :slugged
-
-  def name
-    [first_name, last_name].join(' ')
-  end
 
 end

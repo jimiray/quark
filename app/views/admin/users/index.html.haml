@@ -15,3 +15,21 @@
       - @users.each do |user|
         %tr.danger
           = render partial: user
+
+%br
+%br
+
+%h3 Invited Users
+.table-responsive.table.bordered.col-md-12
+  %table.table-striped.col-md-12
+    %thead
+      %tr
+        %th #
+        %th Name
+        %th Email
+        %th Invited On
+        %th Tasks
+    %tbody
+      - @invited_users.each do |user|
+        %tr.danger
+          = render partial: user

@@ -1,3 +1,13 @@
-%h3 New User
-= render partial: 'form'
+%h3 Invite A User
 
+= simple_form_for [:admin, @user] do |f|
+  .row
+    .col-md-6
+      = f.input :name
+  .row
+    .col-md-6
+      = f.input :email
+
+  %fieldset.text-right
+    = link_to "Cancel", admin_articles_path, class: 'btn btn-default'
+    = f.submit 'Invite User', class: 'btn btn-purple'
