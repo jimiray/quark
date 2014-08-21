@@ -3,6 +3,9 @@
     %label Title
     = f.text_field :title, class: 'form-control input-lg', placeholder: 'Title'
   .form-group
+    %label Preview
+    = f.text_area :preview, data: {"uk-markdownarea" => "{mode:'tab'}"}
+  .form-group
     %label Body
     = f.text_area :body, data: {"uk-markdownarea" => "{mode:'tab'}"}
   .form-group

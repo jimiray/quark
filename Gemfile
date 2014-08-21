@@ -68,6 +68,8 @@ gem "uuidtools"
 
 gem 'sidekiq'
 
+gem 'kramdown'
+
 group :development do
   gem "rspec-rails"
   gem "guard-rspec"

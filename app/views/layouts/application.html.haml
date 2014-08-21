@@ -1,0 +1,145 @@
+!!!
+/[if lt IE 7] <html class="ie ie6 lt-ie9 lt-ie8 lt-ie7" lang="en">
+/[if IE 7] <html class="ie ie7 lt-ie9 lt-ie8"        lang="en">
+/[if IE 8] <html class="ie ie8 lt-ie9"               lang="en">
+/[if IE 9] <html class="ie ie9"                      lang="en">
+/ [if !IE]><!
+%html.no-ie{:lang => "en"}
+  / <![endif]
+  %head
+    / Meta
+    %meta{:charset => "utf-8"}/
+    %title NurdGurls
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %link{href: 'http://fonts.googleapis.com/css?family=Lora|Open+Sans|Montserrat', rel: 'stylesheet', type: 'text/css'}
+    %style
+      :plain
+        body {
+          background-color: #fff;
+          font: 400 15px 'Open Sans',Arial,sans-serif;
+        }
+        .navbar {
+          font: 400 14px Montserrat,Arial,Sans-Serif;
+          font-size: 1.3em;
+          text-transform: uppercase;
+          padding: 20px 0px !important;
+          box-shadow: 0px 4px 24px -6px #777777;
+        }
+        .navbar-brand { color: #7266ba !important; }
+        .navbar-brand:hover { color: #7266ba !important;}
+        .navbar li a { color: #7d7d7d !important;}
+        .navbar li a:hover { color: #7266ba !important; }
+        li.active a { background-color: #fff !important; border-bottom: 1px solid #7266ba;  color: #7266ba !important;}
+        footer { border-top: #777; clear: all; box-shadow: 0px 4px 24px -6px #777777; }
+        section { padding: 100px 0;}
+        a { color: #c4c4c4; }
+        a:hover { color: #7266ba; text-decoration: none; }
+        article { padding: 15px; }
+        article p { font: 400 16px Lora,arial,serif;
+                  line-height: 29px;}
+        article .category a { text-transform: uppercase; }
+        article h3 a { color: #656565; font: 700 26px Montserrat,arial,sans-serif; margin: 15px 0;}
+        article .meta {
+          margin: 15px 0 25px;
+          color: #c4c4c4;
+          font-weight: 600;
+          font-size: 14px;
+        }
+        article .meta a { color: #c4c4c4; }
+        article .meta a:hover { color: #787878; text-decoration: none;}
+        article .actions {
+          margin-top: 30px;
+        }
+        article .actions a.read {
+          text-transform: uppercase;
+          border: 1px solid #e8e8e8;
+          color: #5b5b5b;
+          display: inline-block;
+          padding: 9px 30px 7px;
+        }
+        article .actions a.read:hover {
+          background-color: #7266ba !important;
+          color: #fff;
+        }
+        article .actions .social {
+          opacity: .3;
+        }
+        .social_solid {
+          display: inline-block;
+          position: relative;
+          width: 36px;
+          height: 36px;
+          text-align: center;
+          margin-bottom: 15px;
+          border-top-left-radius: 60px;
+          border-bottom-left-radius: 60px;
+          border-top-right-radius: 60px;
+          border-bottom-right-radius: 60px;
+        }
+  %body
+    .navbar.navbar-inverse{:role => "navigation", style: 'background-color: #fff; border: 0px;'}
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "#"} nurdgurls
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav.pull-right
+            %li.active
+              %a{:href => "#"} Home
+            %li
+              %a{:href => "#about"} About
+            %li
+              %a{:href => "#contact"} Contact
+    %section{style: 'margin-bottom: 600px;'}
+      .col-sm-12
+        = yield
+    .clearfix
+    %br
+    %br
+    %br
+    %br
+    %footer.text-center
+      .footer-above
+        .container
+          .row
+            .footer-col.col-md-4
+              %h3 Location
+              %p
+                3481 Melrose Place
+                %br>/
+                Beverly Hills, CA 90210
+            .footer-col.col-md-4
+              %h3 Around the Web
+              %ul.list-inline
+                %li
+                  %a.btn-social.btn-outline{:href => "#"}
+                    %i.fa.fa-fw.fa-facebook
+                %li
+                  %a.btn-social.btn-outline{:href => "#"}
+                    %i.fa.fa-fw.fa-google-plus
+                %li
+                  %a.btn-social.btn-outline{:href => "#"}
+                    %i.fa.fa-fw.fa-twitter
+                %li
+                  %a.btn-social.btn-outline{:href => "#"}
+                    %i.fa.fa-fw.fa-linkedin
+                %li
+                  %a.btn-social.btn-outline{:href => "#"}
+                    %i.fa.fa-fw.fa-dribbble
+            .footer-col.col-md-4
+              %h3 About Freelancer
+              %p
+                Freelance is a free to use, open source Bootstrap theme created by
+                = succeed "." do
+                  %a{:href => "http://startbootstrap.com"} Start Bootstrap
+      .footer-below
+        .container
+          .row
+            .col-lg-12
+              Copyright © Your Website 2014

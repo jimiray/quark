@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   #devise_for :users
-  root to: 'pages#main'
+  root to: 'articles#index'
 
   devise_for :users, :controllers => { :sessions => "admin/sessions" }
   # Example resource route with concerns:
@@ -22,4 +22,7 @@ Rails.application.routes.draw do
     resources :pages
     resources :users
   end
+
+  resources :articles
+
 end
