@@ -13,42 +13,102 @@
  *= require_self
  *= require bootstrap
  *= require font-awesome
- *= require admin
- *= require common
- *= require theme
- *= require codemirror
- *= require codemirror/themes/night
- *= require bootstrap-tagsinput
- *= require datetimepicker/bootstrap-datetimepicker.css
  */
-
- @import url(http://fonts.googleapis.com/css?family=Gloria+Hallelujah);
-
-.no-padding {
-  padding: 0px 0px !important;
+body {
+  background-color: #fff;
+  font: 400 15px 'Open Sans',Arial,sans-serif;
 }
-
- .brand-logo {
-   color: #fff;
-   font-family: 'Gloria Hallelujah';
-   font-size: 1.2em;
- }
-
- .brand-logo-collapsed {
-   color: #fff;
-  font-family: 'Gloria Hallelujah';
+.navbar {
+  font: 400 14px Montserrat,Arial,Sans-Serif;
+  text-transform: uppercase;
+  padding: 10px 0px !important;
+  box-shadow: 0px 4px 24px -6px #777777;
 }
-
- .atom {
-   font-size: 1.4em;
- }
-
- .panel-heading.text-center {
-
- }
- .panel-heading.text-center a {
+.navbar-brand { color: #7266ba !important; }
+.navbar-brand:hover { color: #7266ba !important;}
+.navbar li a { color: #7d7d7d !important;}
+.navbar li a:hover { color: #7266ba !important; }
+h3 { color: #656565; font: 700 26px Montserrat,arial,sans-serif; margin: 15px 0;}
+section { background-color: #fff;}
+li.active a { background-color: #fff !important; border-bottom: 1px solid #7266ba;  color: #7266ba !important;}
+footer {
+  border-top: #777;
+  clear: all;
+  box-shadow: 0px 4px 24px -6px #777777;
+  padding: 90px;
+  background-color: rgba(0,0,0, 0.7);
+}
+footer .background  {
+  background: url("http://static8.depositphotos.com/1008054/832/v/450/depositphotos_8325371-Science-School-Notebook-Doodles-Vector-Icon-Set.jpg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+  opacity: 0.55;
+}
+footer h3 { font-size: 1.3em; color: #fff; margin: 0 0 25px; font-weight: 400; text-transform: uppercase;}
+footer ul { list-style-type: none; margin-left: 0px; padding-left: 0px;}
+footer ul li { padding: 10px 0px; }
+footer ul li a { color: #9f9f9f; }
+footer ul li a:hover { color: #fff; }
+section { padding: 100px 0;}
+a { color: #c4c4c4; }
+a:hover { color: #7266ba; text-decoration: none; }
+article { padding: 15px; }
+article .image { margin-bottom: 30px; max-height: 192px; height: 192px; overflow: hidden; }
+article .image img { }
+article p { font: 400 16px Lora,arial,serif;
+          line-height: 29px;}
+article .category a { text-transform: uppercase; }
+article h3 a { color: #656565; font: 700 26px Montserrat,arial,sans-serif; margin: 15px 0;}
+article .meta {
+  margin: 15px 0 25px;
+  color: #c4c4c4;
+  font-weight: 600;
+  font-size: 14px;
+}
+article .meta a { color: #c4c4c4; }
+article .meta a:hover { color: #787878; text-decoration: none;}
+article .actions {
+  margin-top: 30px;
+}
+article .actions a.read {
+  text-transform: uppercase;
+  border: 1px solid #e8e8e8;
+  color: #5b5b5b;
+  display: inline-block;
+  padding: 9px 30px 7px;
+}
+article .actions a.read:hover {
+  background-color: #7266ba !important;
   color: #fff;
-  font-size: 1.8em;
-  font-family: 'Gloria Hallelujah';
-  line-height: 0.8em;
- }
+}
+article .actions .social {
+  opacity: .3;
+}
+.social_solid {
+  display: inline-block;
+  position: relative;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  margin-bottom: 15px;
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+.atom { font-size: 3.0em;}
+.brand-text { vertical-align: middle; margin-top: -30px; display: inline-block; font-size: 2.0em;}
+.sidebar { background: #fff !important;}
+.content h4 { text-transform: uppercase; }
+.sidebar { border-left: 1px solid #ededed; padding-left: 3%; padding-right: 3%;}
+.sidebar h3 { text-transform: uppercase; color: #b1b1b1; font-weight: 400; font-size: 18px; font-family: Montserrat,arial,sans-serif; letter-spacing: 2px;}
+.sidebar .widget { padding: 55px 0; border-bottom: 1px solid #ededed;}
+.sidebar .widget .btn-share { padding: 12px 20px 9px; width: 47%; color: #fff; text-transform: uppercase; letter-spacing: 2px; margin: 3px;}
+.sidebar .widget .twitter { background-color: #55acee; }
+.sidebar .widget .facebook { background-color: #3b5998; }
+.sidebar .widget .google-plus{ background-color: #dd4b39; }
+.sidebar .widget .reddit { background-color: #5f99cf; }

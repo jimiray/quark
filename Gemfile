@@ -70,6 +70,8 @@ gem 'sidekiq'
 
 gem 'kramdown'
 
+gem 'draper', '~> 1.3'
+
 group :development do
   gem "rspec-rails"
   gem "guard-rspec"

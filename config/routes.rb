@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # Example resource route within a namespace:
   namespace :admin do
     resource :dashboard
+    resource :profile, only: [:edit, :update]
     resources :articles do
       member do
         post :publish

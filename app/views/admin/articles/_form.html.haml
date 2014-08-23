@@ -4,18 +4,11 @@
     = f.text_field :title, class: 'form-control input-lg', placeholder: 'Title'
   .form-group
     %label Preview
-    = f.text_area :preview, data: {"uk-markdownarea" => "{mode:'tab'}"}
+    = f.text_area :preview, class: 'form-control'
   .form-group
     %label Body
     = f.text_area :body, data: {"uk-markdownarea" => "{mode:'tab'}"}
   .form-group
-    .col-md-4
-      .form-group
-        .input-group
-          %span.input-group-addon
-            %span.fa-tag.fa
-          .form-control
-            = f.text_field :tags, data: {role: 'tagsinput'}, style: "border: 0px;", value: @article.tags.map(&:name).join(',')
     .col-md-4
       .datetimepicker.date.mb-lg.input-group
         = f.text_field :published_at, class: 'form-control', placeholder: 'Publish On'

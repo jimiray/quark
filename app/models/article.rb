@@ -1,9 +1,9 @@
 class Article < ActiveRecord::Base
 
   belongs_to :user
-  has_many :comments
+  belongs_to :category
 
-  has_and_belongs_to_many :tags
+  has_many :comments
 
   validates :title, :body, presence: true
 

@@ -9,5 +9,9 @@ class CreateArticles < ActiveRecord::Migration
       t.timestamp :published_at
       t.timestamps
     end
+
+    add_index :articles, :user_id
+    add_index :articles, :slug
   end
+
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140820025130) do
+ActiveRecord::Schema.define(version: 20140823012324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,11 +26,23 @@ ActiveRecord::Schema.define(version: 20140820025130) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "preview"
+    t.integer  "category_id"
   end
+
+  add_index "articles", ["category_id"], name: "index_articles_on_category_id", using: :btree
+  add_index "articles", ["slug"], name: "index_articles_on_slug", using: :btree
+  add_index "articles", ["user_id"], name: "index_articles_on_user_id", using: :btree
 
   create_table "articles_tags", force: true do |t|
     t.integer "article_id"
     t.integer "tag_id"
+  end
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "comments", force: true do |t|
@@ -90,6 +102,11 @@ ActiveRecord::Schema.define(version: 20140820025130) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
+    t.string   "twitter_handle"
+    t.string   "linked_in_url"
+    t.string   "google_plus_url"
+    t.string   "short_bio"
+    t.text     "bio"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -97,5 +114,6 @@ ActiveRecord::Schema.define(version: 20140820025130) do
   add_index "users", ["invitations_count"], name: "index_users_on_invitations_count", using: :btree
   add_index "users", ["invited_by_id"], name: "index_users_on_invited_by_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["slug"], name: "index_users_on_slug", using: :btree
 
 end

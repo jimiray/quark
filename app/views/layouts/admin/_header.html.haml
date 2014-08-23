@@ -1,0 +1,34 @@
+%nav.navbar.navbar-default.navbar-top.navbar-fixed-top{:role => "navigation"}
+  / START navbar header
+  .navbar-header
+    %a.navbar-brand{:href => "index.html"}
+      .brand-logo
+        %span.atom ⚛
+        Quark
+      .brand-logo-collapsed
+        .span.atom ⚛
+  / END navbar header
+  / START Nav wrapper
+  .nav-wrapper
+    / START Left navbar
+    %ul.nav.navbar-nav
+      %li
+        %a.hidden-xs{data: {"toggle-state" => "aside-collapsed"}, href: "#", title: 'Collapse Menu'}
+          %em.fa.fa-navicon
+        / Button to show/hide the sidebar on mobile. Visible on mobile only.
+        %a.visible-xs{"data-toggle-state" => "aside-toggled", :href => "#"}
+          %em.fa.fa-navicon
+    / START Right Navbar
+    %ul.nav.navbar-nav.navbar-right
+      / Search icon
+      / %li
+      /   %a{"data-toggle" => "navbar-search", :href => "#"}
+      /     %em.fa.fa-search
+      / Fullscreen
+      / %li
+      /   %a{"data-toggle" => "fullscreen", :href => "#"}
+      /     %em.fa.fa-expand
+      %li
+        = link_to raw('<i class="fa fa-user"></i> Edit Profile'), edit_admin_profile_path, title: 'Edit Profile'
+      %li
+        = link_to raw("<i class='fa fa-power-off'></i> Log Out"), destroy_user_session_path, method: :delete, title: 'Log Out'

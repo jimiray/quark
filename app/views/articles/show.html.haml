@@ -1,1 +1,36 @@
-show.html.haml
+.container-fluid
+  .row
+    .content.col-sm-8
+      .col-sm-12
+        %article
+          .category
+            %a{href: "#"}= @article.category.name
+          = @article.title_link
+          .meta
+            = @article.posted_by
+            \/
+            = @article.published_date
+          = @article.body
+          /article_preview(@articles.first)
+          .actions
+            /.pull-left
+            /  = @article.read_button
+            /.pull-right
+            /  %a{href: '#', class: 'social_solid'}
+            /    %span{class: 'fa fa-facebook'}
+            /  %a{href: '#', class: 'social_solid'}
+            /    %span{class: 'fa fa-twitter'}
+            /  %a{href: '#', class: 'social_solid'}
+            /    %span{class: 'fa fa-google-plus'}
+    .sidebar.col-sm-4
+      .widget.author
+        %h3 Author
+        %h5 Michelle Ray
+      .widget.share
+        %h3 Share Article
+        = link_to raw("<i class='fa fa-twitter'></i> Twitter"), '#', class: 'btn btn-share twitter'
+        = link_to raw("<i class='fa fa-facebook'></i> Facebook"), '#', class: 'btn btn-share facebook'
+        = link_to raw("<i class='fa fa-google-plus'></i> Google+"), '#', class: 'btn btn-share google-plus'
+        = link_to raw("<i class='fa fa-reddit'></i> Reddit"), '#', class: 'btn btn-share reddit'
+
+
