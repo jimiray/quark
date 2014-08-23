@@ -61,6 +61,7 @@ gem "bourbon"
 gem 'devise'
 gem 'devise_invitable'
 gem "cancan"
+gem 'role_model'
 
 gem "haml-rails"
 gem "simple_form", git: "https://github.com/plataformatec/simple_form"
@@ -73,6 +74,7 @@ gem 'kramdown'
 gem 'draper', '~> 1.3'
 
 group :development do
+  gem 'pry-rails'
   gem "rspec-rails"
   gem "guard-rspec"
 end

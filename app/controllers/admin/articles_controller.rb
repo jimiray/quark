@@ -1,7 +1,8 @@
 module Admin
   class ArticlesController < Admin::BaseController
 
-    before_filter :find_or_new_article, except: 'index'
+    load_and_authorize_resource find_by: :slug
+    #before_filter :find_or_new_article, except: 'index'
 
     def index
       @articles = Article.includes(:user).all

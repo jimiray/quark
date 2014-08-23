@@ -8,9 +8,12 @@
   %td.col-sm-2
 
 %td.col-sm-4
-  = link_to raw("<span class='fa fa-edit'></span> Edit"), edit_admin_article_path(article), class: 'button btn btn-xs btn-purple'
-  = link_to raw("<span class='fa fa-ban'></span> Delete"), admin_article_path(article), class: 'btn btn-xs btn-danger', method: :delete, data: { confirm: 'Are you sure?'}
-  - unless article.published?
-    = link_to raw("<span class='fa fa-bolt'></span> Publish"), publish_admin_article_path(article), method: :post, class: 'btn btn-xs btn-warning'
-  - else
-    = link_to "Unpublish", unpublish_admin_article_path(article), method: :post, class: 'btn btn-xs btn-warn', data: {confirm: true}
+  - if can?(:edit, article) && !article.published?
+    = link_to raw("<span class='fa fa-edit'></span> Edit"), edit_admin_article_path(article), class: 'button btn btn-xs btn-purple'
+  - if can?(:delete, article) && !article.published?
+    = link_to raw("<span class='fa fa-ban'></span> Delete"), admin_article_path(article), class: 'btn btn-xs btn-danger', method: :delete, data: { confirm: 'Are you sure?'}
+  - if can?(:publish, article)
+    - unless article.published?
+      = link_to raw("<span class='fa fa-bolt'></span> Publish"), publish_admin_article_path(article), method: :post, class: 'btn btn-xs btn-warning'
+    - else
+      = link_to "Unpublish", unpublish_admin_article_path(article), method: :post, class: 'btn btn-xs btn-warn', data: {confirm: true}

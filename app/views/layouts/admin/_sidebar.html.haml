@@ -20,18 +20,19 @@
         %a.no-submenu{"data-toggle" => "", :href => "/admin/articles", :title => "Articles"}
           %em.fa.fa-edit
           %span.item-text Articles
-      %li
-        %a.has-submenu{"data-toggle" => "collapse-next", :href => "/admin/pages", :title => "Elements"}
-          %em.fa.fa-flask
-          %span.item-text Pages
-      %li
-        %a.has-submenu{"data-toggle" => "", :href => "/admin/users", :title => "Forms"}
-          %em.fa.fa-users
-          %span.item-text Users
-      %li
-        %a.no-submenu{"data-toggle" => "collapse-next", :href => "/admin/settings", :title => "Settings"}
-          %em.fa.fa-cogs
-          %span.item-text Settings
+      - if current_user.has_role?(:admin)
+        %li
+          %a.has-submenu{"data-toggle" => "collapse-next", :href => "/admin/pages", :title => "Elements"}
+            %em.fa.fa-flask
+            %span.item-text Pages
+        %li
+          %a.has-submenu{"data-toggle" => "", :href => "/admin/users", :title => "Forms"}
+            %em.fa.fa-users
+            %span.item-text Users
+        %li
+          %a.no-submenu{"data-toggle" => "collapse-next", :href => "/admin/settings", :title => "Settings"}
+            %em.fa.fa-cogs
+            %span.item-text Settings
         / END SubMenu item
       / END Menu
   / END Sidebar (left)
