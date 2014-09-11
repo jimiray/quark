@@ -73,6 +73,9 @@ gem 'kramdown'
 
 gem 'draper', '~> 1.3'
 
+gem 'aws-sdk'
+gem 'paperclip'
+
 group :development do
   gem 'pry-rails'
   gem "rspec-rails"

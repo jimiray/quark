@@ -1,0 +1,17 @@
+.pull-right
+  = link_to raw("<i class='fa fa-plus'></i> New Category"), new_admin_settings_category_path, class: 'btn btn-purple'
+%h3 Settings &raquo; Categories
+
+.table-responsive.table.table.bordered.col-md-12
+  %table.table.striped.col-md-12
+    %thead
+      %tr
+        %th #
+        %td Name
+        %td Num Articles
+        %td Created At
+        %td Tasks
+    %tbody
+      - @categories.each do |category|
+        %tr
+          = render partial: category

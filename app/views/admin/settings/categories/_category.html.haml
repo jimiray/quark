@@ -1,0 +1,13 @@
+%td.col-sm-1= category.id
+%td.col-sm-4
+  - unless category.image.nil?
+    = image_tag(category.image.url, class: 'thumbnail', style: "max-width: 100px; max-height: 75px;")
+  = category.name
+%td.col-sm-1= category.articles.size
+%td.col-sm-2= category.created_at.to_formatted_s(:us_format)
+%td.col-sm-4
+  - if can?(:edit, category)
+    = link_to raw("<i class='fa fa-edit'></i> Edit"), edit_admin_settings_category_path(category), class: 'btn btn-purple'
+  - if can?(:delete, category) && category.articles.size == 0
+    = link_to raw("<i class='fa fa-ban'></i> Delete"), admin_settings_category_path(category), class: 'btn btn-danger', data: {method: :delete, confirm: 'Are you sure?'}
+

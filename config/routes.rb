@@ -22,6 +22,9 @@ Rails.application.routes.draw do
     end
     resources :pages
     resources :users
+    namespace :settings do
+      resources :categories
+    end
   end
 
   resources :articles

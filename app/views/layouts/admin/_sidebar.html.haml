@@ -33,6 +33,10 @@
           %a.no-submenu{"data-toggle" => "collapse-next", :href => "/admin/settings", :title => "Settings"}
             %em.fa.fa-cogs
             %span.item-text Settings
+            %ul.nav.collapse
+              %li
+                = link_to "Categories", admin_settings_categories_path, class: 'no-submenu'
+
         / END SubMenu item
       / END Menu
   / END Sidebar (left)
