@@ -1,4 +1,4 @@
-= form_for [:admin, @article], role: 'form' do |f|
+= form_for [:admin, @article], role: 'form', multipart: true do |f|
   .form-group.form-group-lg
     %label Title
     = f.text_field :title, class: 'form-control input-lg', placeholder: 'Title'
@@ -8,16 +8,26 @@
   .form-group
     %label Body
     = f.text_area :body, data: {"uk-markdownarea" => "{mode:'tab'}"}
+  %h4 Meta Information
   .form-group
-    .col-md-4
-      .datetimepicker.date.mb-lg.input-group
-        = f.text_field :published_at, class: 'form-control', placeholder: 'Publish On'
-        %span.input-group-addon
-          %span.fa-calendar.fa
-    .col-md-4
-      %label Feature
-      = f.check_box :featured
+    .row
+      .col-md-4
+        .datetimepicker.date.mb-lg.input-group
+          = f.text_field :published_at, class: 'form-control', placeholder: 'Publish On'
+          %span.input-group-addon
+            %span.fa-calendar.fa
+      .col-md-4
+        %label Feature
+        = f.check_box :featured
+      .col-md-4
+        %label Category
+        = f.select :category_id, Category.all.collect { |c| [c.name, c.id] }
+    .row
+      .col-md-8
+        %label Header Image
+        = f.file_field :image
 
+  .clearfix
   %fieldset.text-right
     = link_to "Cancel", admin_articles_path, class: 'btn btn-default'
     = f.submit 'Save', class: 'btn btn-purple'

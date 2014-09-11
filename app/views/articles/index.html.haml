@@ -23,12 +23,12 @@
               %a{href: '#', class: 'social_solid'}
                 %span{class: 'fa fa-google-plus'}
       .col-sm-5
-        %img.img-responsive{src: "http://lorempixel.com/500/300/"}
+        %img.img-responsive{src: @articles.first.image}
   .row.articles{style: "margin: 45px 0px 0px 0px;"}
     .col-sm-4
       %article
         .image
-          %img.img-responsive{src: "http://lorempixel.com/400/266/"}
+          %img.img-responsive{src: @articles.first.image}
         .category
           %a{href: "#"}= @articles.first.category.name
         = @articles.first.title_link
@@ -51,7 +51,7 @@
     .col-sm-4
       %article
         .image
-          %img.img-responsive{src: "http://lorempixel.com/400/266/"}
+          %img.img-responsive{src: Category.first.image.url}
         .category
           %a{href: "#"} Astronomy
         %h3

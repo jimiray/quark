@@ -1,5 +1,7 @@
 class Article < ActiveRecord::Base
 
+  attr_accessor :image
+
   belongs_to :user
   belongs_to :category
 
@@ -9,6 +11,8 @@ class Article < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :title, use: :slugged
+
+  has_attached_file :image
 
   def published?
     return false if published_at.nil?
