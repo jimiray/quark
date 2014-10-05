@@ -4,11 +4,13 @@ class User < ActiveRecord::Base
 
   include RoleModel
 
+  include Invitable
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :invitable
+         :invitable, :async
 
   has_many :articles
 
@@ -18,6 +20,9 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
 
-  roles :admin, :author
+  roles :admin, :editor, :author, :user
+
+  scope :invited, -> { where("encrypted_password=''") }
+  scope :accepted, -> { where("encrypted_password !=''") }
 
 end

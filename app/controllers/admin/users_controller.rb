@@ -4,9 +4,8 @@ module Admin
     before_filter :find_or_new_user, except: [:index]
 
     def index
-      @users = User.where("encrypted_password != ''")
-
-      @invited_users = User.where("encrypted_password = ''")
+      @users = User.accepted
+      @invited_users = User.invited
     end
 
     def show; end
@@ -14,9 +13,7 @@ module Admin
     def new; end
 
     def create
-      if User.invite!({email: params[:user][:email],
-                       name: params[:user][:name]},
-                      current_user)
+      if User.invite!(invite_user_params, current_user)
         flash[:notice] = "User - #{@user.name} has been invited"
         redirect_to admin_users_path
       else
@@ -44,6 +41,16 @@ module Admin
     end
 
     private
+
+    def invite_user_params
+      params.require(:user).permit(:name, :email, :roles)
+    end
+
+    def user_params
+      params.require(:user).permit(:name, :email, :twitter_handle,
+                                   :linked_in_ur, :google_plus_url, :roles)
+    end
+
 
     def find_or_new_user
       @user = params[:id] ? User.friendly.find(params[:id]) : User.new

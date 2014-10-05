@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  # Sidekiq
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
+
   #devise_for :users
   root to: 'articles#index'
 
@@ -21,7 +26,11 @@ Rails.application.routes.draw do
       end
     end
     resources :pages
-    resources :users
+    resources :users do
+      member do
+        post :uninvite
+      end
+    end
     namespace :settings do
       resources :categories
     end

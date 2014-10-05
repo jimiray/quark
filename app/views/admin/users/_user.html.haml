@@ -1,9 +1,13 @@
 %td.col-sm-1= user.id
-%td.col-sm-5= link_to user.name, admin_user_path(user)
+%td.col-sm-3= link_to user.name, admin_user_path(user)
 %td.col-sm-1= user.email
-- unless user.encrypted_password.nil?
-  %td.col-sm-2= user.created_at.to_formatted_s(:us_format)
-- else
-  %td.col-sm-2= user.invitation_created_at.to_formatted_s(:us_format)
+%td.col-sm-2= user.roles.to_a.join(', ')
+%td.col-sm-2
+  - unless user.encrypted_password.nil?
+    = user.created_at.to_formatted_s(:us_format)
+  - else
+    = user.invitation_created_at.to_formatted_s(:us_format)
 %td.col-sm-2
   = link_to raw("<span class='fa fa-edit'></span> Edit</span>"), edit_admin_user_path(user), class: 'button btn btn-xs btn-purple'
+  - if user.invited? && !user.accepted_invitation?
+    = link_to raw("<span class='fa fa-ban'></span> Uninvite</span>"), admin_user_path(user), class: 'button btn btn-xs btn-danger', method: :delete

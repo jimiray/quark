@@ -9,35 +9,22 @@
         %span.user-block-name.item-text Welcome User
         %span.user-block-role= current_user.name.split(' ').first
     %ul.nav
-      / START Menu
       %li.nav-heading Main navigation
-      %li
-        %a.no-submenu{"data-toggle" => "", :href => "/admin/dashboard", :title => "Dashboard"}
-          %em.fa.fa-dot-circle-o
-          .label.label-primary.pull-right 10
-          %span.item-text Dashboard
-      %li.active
-        %a.no-submenu{"data-toggle" => "", :href => "/admin/articles", :title => "Articles"}
-          %em.fa.fa-edit
-          %span.item-text Articles
-      - if current_user.has_role?(:admin)
-        %li
-          %a.has-submenu{"data-toggle" => "collapse-next", :href => "/admin/pages", :title => "Elements"}
-            %em.fa.fa-flask
-            %span.item-text Pages
-        %li
-          %a.has-submenu{"data-toggle" => "", :href => "/admin/users", :title => "Forms"}
-            %em.fa.fa-users
-            %span.item-text Users
+      = admin_sidebar_item("/admin/dashboard", "Dashboard", "dot-circle-o")
+      = admin_sidebar_item("/admin/articles", "Articles", "edit")
+      = admin_sidebar_item("/admin/pages", "Pages", "flask")
+      = admin_sidebar_item("/admin/users", "Users", "users")
+      - if params[:controller].split('/').include?('settings')
+        %li.active
+          %a.no-submenu{"data-toggle" => "collapse-next", :href => "/admin/settings", :title => "Settings"}
+            %em.fa.fa-cogs
+            %span.item-text Settings
+            %ul.nav
+              = admin_sidebar_submenu_item(admin_settings_categories_path, "Categories")
+      - else
         %li
           %a.no-submenu{"data-toggle" => "collapse-next", :href => "/admin/settings", :title => "Settings"}
             %em.fa.fa-cogs
             %span.item-text Settings
             %ul.nav.collapse
-              %li
-                = link_to "Categories", admin_settings_categories_path, class: 'no-submenu'
-
-        / END SubMenu item
-      / END Menu
-  / END Sidebar (left)
-/ End aside
+              = admin_sidebar_submenu_item(admin_settings_categories_path, "Categories")

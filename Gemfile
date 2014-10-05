@@ -43,6 +43,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'pg'
 
 gem 'font-awesome-rails'
 
@@ -58,17 +59,24 @@ gem "bcrypt-ruby"
 gem 'friendly_id', '~> 5.0.0'
 
 gem "bourbon"
+
+# Auth
 gem 'devise'
 gem 'devise_invitable'
+gem 'devise-async'
 gem "cancan"
 gem 'role_model'
+gem 'sinatra', '>= 1.3.0', :require => nil
 
+# Views
 gem "haml-rails"
 gem "simple_form", git: "https://github.com/plataformatec/simple_form"
 gem "uuidtools"
 
+# Sidekiq Delayed
 gem 'sidekiq'
 
+# Markdown
 gem 'kramdown'
 
 gem 'draper', '~> 1.3'
@@ -90,11 +98,6 @@ group :test do
   gem "database_cleaner"
 end
 
-group :development, :test do
-  gem 'mysql2'
-end
-
 group :production do
-  gem 'pg'
   gem "rails_12factor"
 end
