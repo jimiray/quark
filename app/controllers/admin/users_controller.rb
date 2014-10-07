@@ -34,9 +34,9 @@ module Admin
     end
 
     def destroy
-      if @user.disable!
-        flash[:notice] = "User - #{@user.name} disabled"
-        redirect_to users_path
+      if @user.destroy
+        flash[:notice] = "User - #{@user.name} deleted"
+        redirect_to admin_users_path
       end
     end
 

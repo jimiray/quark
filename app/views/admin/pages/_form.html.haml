@@ -1,0 +1,10 @@
+= form_for [:admin, @page], role: 'form' do |f|
+  .form-group.form-group-lg
+    %label Title
+    = f.text_field :title, class: 'form-control input-lg', placeholder: 'Title'
+  .form-group
+    %label Body
+    = f.text_area :body, data: {"uk-markdownarea" => "{mode: 'tab'}"}
+  %fieldset.text-right
+    = link_to "Cancel", admin_pages_path, class: "btn btn-default"
+    = f.submit 'Save', class: 'btn btn-purple'

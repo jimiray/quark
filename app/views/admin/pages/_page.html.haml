@@ -1,0 +1,10 @@
+%td.col-sm-1= page.id
+%td.col-sm-4= page.title
+%td.col-sm-2= "/#{page.slug}"
+%td.col-sm-1= page.user.name
+%td.col-sm-2= page.created_at.to_formatted_s(:us_format)
+%td.col-sm-4
+  - if can?(:edit, page)
+    = link_to raw("<span class='fa fa-edit'></span> Edit"), edit_admin_page_path(page), class: 'button btn btn-xs btn-purple'
+  - if can?(:delete, page) && page.can_be_deleted?
+    = link_to raw("<span class='fa fa-ban'></span> Delete"), admin_page_path(page), class: 'btn btn-xs btn-danger', method: :delete, data: { confirm: 'Are you sure?'}

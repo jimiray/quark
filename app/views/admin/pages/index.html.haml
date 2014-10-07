@@ -1,0 +1,19 @@
+.pull-right
+  = link_to raw("<span class='fa fa-plus'></span> New Page"), new_admin_page_path, class: 'btn btn-purple'
+
+%h3 All Pages
+
+.table-responsive.table.bordered.col-md-12
+  %table.table-striped.col-md-12
+    %thead
+      %tr
+        %th #
+        %th Title
+        %th URL
+        %th Author
+        %th Created At
+        %th Tasks
+    %tbody
+      - @pages.each do |page|
+        %tr.danger
+          = render partial: page

@@ -1,13 +1,26 @@
-user = User.create!(name: 'Admin User', email: 'admin@example.com', password: 'test1234', password_confirmation: 'test1234')
-user.roles << :admin
-user.save
-author = User.create(name: "Jim Ray", email: 'jimiray@gmail.com', password: 'test1234', password_confirmation: 'test1234')
-author.roles << :author
-author.save
+admins = [
+ {name: 'Admin User', email: 'admin@nurdgurls.com', password: 'test1234', password_confirmation: 'test1234'},
+]
 
-%w(Astronomy).each do |category|
-  Category.create(name: category)
+admins.each do |admin|
+  unless User.find_by(email: admin[:email])
+    user = User.create!(admin)
+    user.roles << :admin
+    user.save
+  end
 end
+
+categories = [
+  "Nature",
+  "Astrophysics",
+  "Climate",
+  "Health and Medicine",
+]
+
+categories.each do |category|
+  Category.find_or_create_by(name: category)
+end
+
 article = Article.create!(user_id: user.id,
                           title: 'Welcome to Quark',
                           preview: 'Welcome to Quark, this is a blog about astronomy.',

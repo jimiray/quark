@@ -68,6 +68,9 @@ gem "cancan"
 gem 'role_model'
 gem 'sinatra', '>= 1.3.0', :require => nil
 
+# Gravatar
+gem 'gravatar_image_tag'
+
 # Views
 gem "haml-rails"
 gem "simple_form", git: "https://github.com/plataformatec/simple_form"

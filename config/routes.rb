@@ -38,4 +38,6 @@ Rails.application.routes.draw do
 
   resources :articles
 
+  get "/:id", to: "pages#show", as: 'page'
+
 end

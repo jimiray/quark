@@ -28,12 +28,9 @@
             %span.brand-text nurdgurls
         .collapse.navbar-collapse
           %ul.nav.navbar-nav.navbar-right
-            %li.active
-              %a{:href => "#"} Home
-            %li
-              %a{:href => "#about"} About
-            %li
-              %a{:href => "#contact"} Contact
+            = navigation_link("Home", "/")
+            = navigation_link("About", "/about")
+            = navigation_link("Contact", "/contact")
     %section.container-fluid
       .col-sm-12
         = yield

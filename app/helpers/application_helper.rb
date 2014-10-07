@@ -6,6 +6,12 @@ module ApplicationHelper
     Kramdown::Document.new(text).to_html.html_safe
   end
 
+  def navigation_link(name, url)
+    class_name = active_class_name(url)
+    link = link_to(name, url)
+    content_tag(:li, link, class: class_name)
+  end
+
   def admin_sidebar_item(link, title, icon)
     Rails.logger.debug("path is #{request.path}")
     class_name = active_class_name(link)
@@ -22,6 +28,7 @@ module ApplicationHelper
   end
 
   def active_class_name(link)
+    return 'active' if request.path == link
     class_name = request.path.split('/').include?(link.split('/').last) ? "active" : ""
     return class_name
   end
