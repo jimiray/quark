@@ -21,8 +21,19 @@ categories.each do |category|
   Category.find_or_create_by(name: category)
 end
 
-article = Article.create!(user_id: user.id,
+article = Article.create!(user: User.first,
                           title: 'Welcome to Quark',
                           preview: 'Welcome to Quark, this is a blog about astronomy.',
                           body: 'About Quark gose here!',
                           category_id: Category.first.id)
+
+pages = [
+  {title: 'About', body: 'This is where the about content goes'},
+  {title: 'Contact', body: 'This is where the contact content goes'}
+]
+
+pages.each do |page|
+  unless Page.find_by_title(page[:title])
+    Page.create(page.merge!(user: User.first))
+  end
+end
