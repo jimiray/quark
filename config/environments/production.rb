@@ -83,4 +83,13 @@ Rails.application.configure do
 
   # Mail host
   config.action_mailer.default_url_options = { host: "example.com" }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.mandrillapp.com",
+    port: 587,
+    domain: "nurdgurls.com",
+    authentication: :plain,
+    username: ENV["MANDRILL_USERNAME"],
+    password: ENV["MANDRILL_APIKEY"],
+  }
 end
