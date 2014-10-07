@@ -85,11 +85,12 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: "example.com" }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: "smtp.mandrillapp.com",
-    port: 587,
-    domain: "nurdgurls.com",
-    authentication: :plain,
-    username: ENV["MANDRILL_USERNAME"],
-    password: ENV["MANDRILL_APIKEY"],
+    address:              "smtp.mandrillapp.com",
+    port:                 587,
+    enable_starttls_auto: true, # detects and uses STARTTLS
+    user_name:            ENV["MANDRILL_USERNAME"],
+    password:             ENV["MANDRILL_APIKEY"],
+    authentication:       'login',
+    domain:               'nurdgurls.com',
   }
 end
