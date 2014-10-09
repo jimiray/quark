@@ -1,0 +1,19 @@
+%h3 Edit User - #{@user.name}
+= simple_form_for [:admin, @user], url: admin_user_path, html: {class: 'form form-horizontal'}, role: :form do |f|
+  .form_group
+    = f.input :name
+  .form_group
+    = f.input :email
+  .form_group
+    = f.input :twitter_handle
+  .form_group
+    = f.input :linked_in_url, placeholder: 'http://www.linkedin.com/in/your_username/'
+  .form_group
+    = f.input :google_plus_url, placeholder: 'http://google.com/+JimRayjimiray'
+  .form_group
+    = f.input :short_bio, placeholder: 'Please right a little about yourself', as: :text, label: "Short Bio"
+  .form_group
+    = f.input :bio, input_html: {data: {"uk-markdownarea" => "{mode:'tab'}"}}
+  %fieldset.text-right
+    = link_to "Cancel", admin_articles_path, class: 'btn btn-default'
+    = f.submit 'Save', class: 'btn btn-purple'

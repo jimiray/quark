@@ -30,7 +30,11 @@ class ArticleDecorator < Draper::Decorator
   end
 
   def image
-    article.image.url || article.category.image.url
+    if article.image.url == "/images/original/missing.png"
+      return article.category.image.url
+    else
+      article.image.url
+    end
   end
 
 

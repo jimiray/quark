@@ -25,56 +25,7 @@
       .col-sm-5
         %img.img-responsive{src: @articles.first.image}
   .row.articles{style: "margin: 45px 0px 0px 0px;"}
-    .col-sm-4
-      %article
-        .image
-          %img.img-responsive{src: @articles.first.image}
-        .category
-          %a{href: "#"}= @articles.first.category.name
-        = @articles.first.title_link
-        .meta
-          = @articles.first.posted_by
-          \/
-          = @articles.first.published_date
-        = @articles.first.preview
-        /article_preview(@articles.first)
-        .actions
-          .pull-left
-            = @articles.first.read_button
-          .pull-right
-            %a{href: '#', class: 'social_solid'}
-              %span{class: 'fa fa-facebook'}
-            %a{href: '#', class: 'social_solid'}
-              %span{class: 'fa fa-twitter'}
-            %a{href: '#', class: 'social_solid'}
-              %span{class: 'fa fa-google-plus'}
-    .col-sm-4
-      %article
-        .image
-          %img.img-responsive{src: Category.first.image.url}
-        .category
-          %a{href: "#"} Astronomy
-        %h3
-          %a{href: '#'}= @articles.first.title
-        .meta
-          %a{href: "#"} Admin User
-          \/
-          %a{href: "#"} 15 January 2014
-        = article_preview(@articles.first)
-    .col-sm-4
-      %article
-        .image
-          %img.img-responsive{src: "http://lorempixel.com/400/266/"}
-        .category
-          %a{href: "#"} Astronomy
-        %h3
-          %a{href: '#'}= @articles.first.title
-        .meta
-          %a{href: "#"} Admin User
-          \/
-          %a{href: "#"} 15 January 2014
-        = article_preview(@articles.first)
-
+    = render partial: 'article', collection: @articles
   .row.articles{style: "margin: 45px 0px 0px 0px;"}
     .col-sm-6
       %article

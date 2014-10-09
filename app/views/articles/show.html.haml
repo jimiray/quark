@@ -25,7 +25,8 @@
     .sidebar.col-sm-4
       .widget.author
         %h3 Author
-        %h5 Michelle Ray
+        %h5= @article.user.name
+        %p= @article.user.short_bio
       .widget.share
         %h3 Share Article
         = link_to raw("<i class='fa fa-twitter'></i> Twitter"), '#', class: 'btn btn-share twitter'

@@ -48,7 +48,8 @@ module Admin
 
     def user_params
       params.require(:user).permit(:name, :email, :twitter_handle,
-                                   :linked_in_ur, :google_plus_url, :roles)
+                                   :linked_in_ur, :google_plus_url, :roles,
+                                   :bio, :short_bio)
     end
 
 
