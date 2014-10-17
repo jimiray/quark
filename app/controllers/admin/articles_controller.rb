@@ -1,8 +1,8 @@
 module Admin
   class ArticlesController < Admin::BaseController
 
-    load_and_authorize_resource find_by: :slug
-    #before_filter :find_or_new_article, except: 'index'
+    #load_and_authorize_resource find_by: :slug
+    before_filter :find_or_new_article, except: 'index'
 
     def index
       @articles = Article.includes(:user).all
@@ -13,6 +13,7 @@ module Admin
     def new; end
 
     def create
+      Rails.logger.debug("artickel is #{params[:article]}")
       @article.attributes = article_params
       @article.user = current_user
       if @article.save
@@ -21,7 +22,6 @@ module Admin
       else
         render action: 'new'
       end
-
     end
 
     def edit; end
@@ -49,12 +49,12 @@ module Admin
       end
     end
 
-  def destroy
-    if @article.destroy
-      flash[:notice] = "Article - #{@article.title} deleted"
-      redirect_to admin_articles_path
+    def destroy
+      if @article.destroy
+        flash[:notice] = "Article - #{@article.title} deleted"
+        redirect_to admin_articles_path
+      end
     end
-  end
 
     private
 
@@ -63,6 +63,7 @@ module Admin
     end
 
     def article_params
+      Rails.logger.debug("Parmas are #{params}")
       params.require(:article).permit(:title, :preview, :body, :featured, :category_id, :image, :published_at)
     end
 
