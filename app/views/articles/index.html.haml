@@ -4,7 +4,7 @@
       .col-sm-7
         %article
           .category
-            %a{href: "#"}= @articles.first.category.name
+            = link_to @articles.first.category.name, category_path(@articles.first.category)
           = @articles.first.title_link
           .meta
             = @articles.first.posted_by

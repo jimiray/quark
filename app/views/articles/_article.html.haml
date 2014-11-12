@@ -3,7 +3,7 @@
     .image
       %img.img-responsive{src: article.image}
     .category
-      %a{href: "#"}= article.category.name
+      = link_to article.category.name, category_path(article.category)
     = article.title_link
     .meta
       = article.posted_by
