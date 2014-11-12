@@ -16,7 +16,6 @@
  */
 body {
   background-color: #fff;
- /*  font: 400 15px 'PT Sans',Arial,sans-serif !important; */
   font:  400 14px Montserrat,arial,sans-serif !important;
 }
 
@@ -24,20 +23,20 @@ a { color: #7266ba !important;}
 a:hover { color: #7266ba; text-decoration: underline;}
 
 #logo {
-    -webkit-border-radius: 90px;
-    -moz-border-radius: 90px;
-    border-radius: 90px;
-    background: #fff;
-    color: #7266ba;
-    font-size: 2.8em;
-    font-family: 'Grand Hotel';
-    font-weight: bold;
-    display: table-cell;
-    /*padding: 0px 22px 8PX 22px;*/
-    padding: 0px 15px;
-    line-height: 90PX;
-    text-align: center;
-    vertical-align: middle;
+  -webkit-border-radius: 90px;
+  -moz-border-radius: 90px;
+  border-radius: 90px;
+  background: #fff;
+  color: #7266ba;
+  font-size: 2.8em;
+  font-family: 'Grand Hotel';
+  font-weight: bold;
+  display: table-cell;
+  /*padding: 0px 22px 8PX 22px;*/
+  padding: 0px 15px;
+  line-height: 90PX;
+  text-align: center;
+  vertical-align: middle;
 }
 .brand-text {
   color: #fff;
@@ -49,7 +48,6 @@ a:hover { color: #7266ba; text-decoration: underline;}
 }
 
 .navbar {
-  /* font: 400 14px Montserrat,Arial,Sans-Serif; */
   font: 400 14px 'PT Sans';
   padding: 10px 0px !important;
   box-shadow: 0px 4px 24px -6px #777777;
@@ -82,14 +80,18 @@ footer .background  {
   z-index: -100;
   opacity: 0.55;
 }
-footer h3 { font-size: 1.3em; color: #fff; margin: 0 0 25px; font-weight: 400; text-transform: uppercase;}
+footer h3 {
+  font-size: 1.3em;
+  font-family: Montserrat; color: #fff; margin: 0 0 25px; font-weight: 400; text-transform: uppercase;}
 footer ul { list-style-type: none; margin-left: 0px; padding-left: 0px;}
 footer ul li { padding: 10px 0px; }
-footer ul li a { color: #9f9f9f; }
+footer ul li a { color: #9f9f9f !important; }
 footer ul li a:hover { color: #fff; }
 section { padding: 100px 0;}
-a { color: #c4c4c4; }
-a:hover { color: #7266ba; text-decoration: none; }
+
+article a { color: #c4c4c4; }
+article a:hover { color: #fff; text-decoration: none; }
+
 article { padding: 15px; }
 article .image { margin-bottom: 30px; max-height: 192px; height: 192px; overflow: hidden; }
 article .image img { }
@@ -117,7 +119,7 @@ article .actions a.read {
 }
 article .actions a.read:hover {
   background-color: #7266ba !important;
-  color: #fff;
+  color: #fff !important;
 }
 article .actions .social {
   opacity: .3;

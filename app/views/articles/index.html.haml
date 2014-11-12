@@ -25,7 +25,7 @@
       .col-sm-5
         %img.img-responsive{src: @articles.first.image}
   .row.articles{style: "margin: 45px 0px 0px 0px;"}
-    = render partial: 'article', collection: @articles
+    = render partial: '/articles/article', collection: @articles
   .row.articles{style: "margin: 45px 0px 0px 0px;"}
     .col-sm-6
       %article

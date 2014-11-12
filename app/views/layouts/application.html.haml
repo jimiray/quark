@@ -47,14 +47,9 @@
             .footer-col.col-md-3
               %h3 Categories
               %ul
-                %li
-                  %a{href: '#'} Science
-                %li
-                  %a{href: '#'} Books
-                %li
-                  %a{href: '#'} Games
-                %li
-                  %a{href: '#'} Geology
+                - Category.all.each do |category|
+                  %li
+                    = link_to category.name, category_path(category.slug)
             .footer-col.col-md-3
               %h3 Archive
               %ul
@@ -75,9 +70,3 @@
                   %a{href: '#'} Log In
                 %li
                   %a{href: '#'} Contribute
-            .footer-col.col-md-3
-              %h3 Twitter
-              %p
-                Freelance is a free to use, open source Bootstrap theme created by
-                = succeed "." do
-                  %a{:href => "http://startbootstrap.com"} Start Bootstrap
