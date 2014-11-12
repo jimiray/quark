@@ -16,15 +16,19 @@
  */
 body {
   background-color: #fff;
-  font: 400 15px 'PT Sans Narrow',Arial,sans-serif;
+ /*  font: 400 15px 'PT Sans',Arial,sans-serif !important; */
+  font:  400 14px Montserrat,arial,sans-serif !important;
 }
 
+a { color: #7266ba !important;}
+a:hover { color: #7266ba; text-decoration: underline;}
 
- #logo {
+#logo {
     -webkit-border-radius: 90px;
     -moz-border-radius: 90px;
     border-radius: 90px;
-    background: #7266ba;
+    background: #fff;
+    color: #7266ba;
     font-size: 2.8em;
     font-family: 'Grand Hotel';
     font-weight: bold;
@@ -32,12 +36,11 @@ body {
     /*padding: 0px 22px 8PX 22px;*/
     padding: 0px 15px;
     line-height: 90PX;
-    color: #fff;
     text-align: center;
     vertical-align: middle;
 }
 .brand-text {
-  color: #7266ba;
+  color: #fff;
   font-family: 'PT Sans Narrow';
   font-size: 3em;
 }
@@ -47,19 +50,21 @@ body {
 
 .navbar {
   /* font: 400 14px Montserrat,Arial,Sans-Serif; */
+  font: 400 14px 'PT Sans';
   padding: 10px 0px !important;
   box-shadow: 0px 4px 24px -6px #777777;
+  background: #7266ba !important;
 }
 .navbar-brand { color: #7266ba !important; }
 .navbar-brand:hover { color: #7266ba !important;}
 .navbar-brand span.tagline { display: block; font-size: .8em; text-transform: none;}
-.navbar li a { color: #7d7d7d !important;}
-.navbar li a:hover { color: #7266ba !important; }
+.navbar li a { color: #fff !important; background: transparent;}
+.navbar li a:hover { color: #fff !important; }
 
 h3 { color: #656565; font: 700 26px Montserrat,arial,sans-serif; margin: 15px 0;}
 section { background-color: #fff;}
 
-li.active a { background-color: #fff !important; border-bottom: 1px solid #7266ba;  color: #7266ba !important;}
+li.active a { background-color: transparent !important; border-bottom: 1px solid #fff;  color: #fff !important;}
 footer {
   border-top: #777;
   clear: all;
